@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "socios")
 public class Socio {
 
+    private static final String[] ESTADOS = {"Activo", "Suspendido", "Inactivo"};
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

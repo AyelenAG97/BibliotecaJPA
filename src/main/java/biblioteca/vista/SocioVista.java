@@ -12,7 +12,6 @@ import javax.swing.*;
  */
 public class SocioVista extends JFrame {
 
-    private static final String[] ESTADOS = {"Activo", "Suspendido", "Inactivo"};
 
     // Formulario de datos del socio
     private final JLabel lblNombre = new JLabel("Nombre:");
