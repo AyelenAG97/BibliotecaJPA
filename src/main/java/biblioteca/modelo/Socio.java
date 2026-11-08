@@ -2,11 +2,14 @@ package biblioteca.modelo;
 
 import jakarta.persistence.*;
 
+/**
+ * Entidad que representa a un socio registrado en la biblioteca.
+ */
 @Entity
 @Table(name = "socios")
 public class Socio {
 
-    private static final String[] ESTADOS = {"Activo", "Suspendido", "Inactivo"};
+    public static final String[] ESTADOS = {"Activo", "Suspendido", "Inactivo"};
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +30,7 @@ public class Socio {
                  String email, String telefono, String estado) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
+        this.dni = dni; 
         this.email = email;
         this.telefono = telefono;
         this.estado = estado;
@@ -53,4 +56,21 @@ public class Socio {
 
     public String getEstado() { return estado; }
     public void setEstado(String estado) { this.estado = estado; }
+
+    @Override
+    public String toString() {
+        return apellido + ", " + nombre + " (DNI: " + dni + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Socio otro)) return false;
+        return id != null && id.equals(otro.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
+    }
 }

@@ -30,7 +30,7 @@ public class SocioVista extends JFrame {
     private final JTextField txtTelefono = new JTextField(15);
 
     private final JLabel lblEstado = new JLabel("Estado:");
-    private final JComboBox<String> comboEstado = new JComboBox<>(ESTADOS);
+    private final JComboBox<String> comboEstado = new JComboBox<>(Socio.ESTADOS);
 
     // Botones del CRUD
     private final JButton btnRegistrar = new JButton("Registrar");
@@ -50,7 +50,7 @@ public class SocioVista extends JFrame {
     }
 
     private void configurarVentana() {
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(760, 560);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(10, 10));
@@ -66,7 +66,7 @@ public class SocioVista extends JFrame {
 
     private void cargarOpcionesDeFiltro() {
         comboFiltro.addItem(ListadoSocios.FILTRO_TODOS);
-        for (String estado : ESTADOS) {
+        for (String estado : Socio.ESTADOS) {
             comboFiltro.addItem(estado);
         }
     }

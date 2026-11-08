@@ -10,6 +10,12 @@ package biblioteca.dao;
  */
 import java.util.List;
 
+/**
+ * Interfaz genérica con las operaciones CRUD básicas de persistencia.
+ *
+ * @param <T> Tipo de la entidad.
+ * @param <ID> Tipo del identificador de la entidad.
+ */
 public interface DAO<T, ID> {
     void insert(T entity) throws DaoException;
     T findById(ID id) throws DaoException;
